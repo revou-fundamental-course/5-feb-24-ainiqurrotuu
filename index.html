@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title> Konverter Suhu Sederhana </title>
+<body>
+  <center>
+<h2>Website Konverter Suhu</h2>
+    Masukan suhu derajat Celsius (&deg;C) ke kotak dibawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Fahrenheit (&deg;F).
+
+<p>
+  <label>Celsius</label>
+  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+<p>
+  <button id="convert" onclick="convert()">Konversi</button>
+  <input type="reset" value="Reset"></p>
+<p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+
+<hr>
+
+<p>
+    <label>Fahrenheit</label>
+    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter2(this.value)" onchange="temperatureConverter2(this.value)">
+</p>
+<p>
+  <button id="convert" onclick="convert()">Konversi</button>
+  <input type="reset" value="Reset"></p>
+<p>Celsius: <span id="outputCelsius"></span></p>
+
+<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+}
+function temperatureConverter2(valNum2) {
+  valNum2 = parseFloat(valNum2);
+  document.getElementById("outputCelsius").innerHTML=(valNum2-32) / 1.8;
+}
+</script>
+</center>
+</body>
+</html>
